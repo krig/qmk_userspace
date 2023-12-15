@@ -94,16 +94,24 @@ bool oled_task_user() {
 }
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if (get_highest_layer(layer_state) > 0) {
-        uint8_t layer = get_highest_layer(layer_state);
+    const uint8_t layer = get_highest_layer(layer_state);
+    if (layer == _ALTERN) {
+        rgb_matrix_set_color(g_led_config.matrix_co[0][0], RGB_GOLD);
+    } if (layer == _GAME) {
+        rgb_matrix_set_color_all(RGB_OFF);
+        rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_GOLD);
+        rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
+        rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
+        rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
+    } else if (layer > _GAME) {
+        rgb_matrix_set_color_all(RGB_OFF);
 
         for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
             for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
                 uint8_t index = g_led_config.matrix_co[row][col];
-
                 if (index >= led_min && index < led_max && index != NO_LED &&
                 keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                    rgb_matrix_set_color(index, RGB_GREEN);
+                    rgb_matrix_set_color(index, RGB_PURPLE);
                 }
             }
         }
