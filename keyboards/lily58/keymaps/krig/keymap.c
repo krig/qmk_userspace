@@ -75,16 +75,18 @@ void oled_render_logo_r2g(void);
 
 bool oled_task_user() {
      if (is_keyboard_master()) {
-         switch (get_highest_layer(default_layer_state)) {
-             case _ALTERN: oled_write_ln_P(PSTR("altern"), false); break;
-             case _QWERTY: oled_write_ln_P(PSTR("qwerty"), false); break;
-             case _GAME: oled_write_ln_P(PSTR("uhc"), false); break;
+         const int dlayer = get_highest_layer(default_layer_state);
+         const int layer = get_highest_layer(layer_state);
+         switch (dlayer) {
+             case _ALTERN: oled_write_ln_P(PSTR("ALT!!!"), false); break;
+             case _QWERTY: oled_write_ln_P(PSTR("QWERTY"), false); break;
+             case _GAME: oled_write_ln_P(PSTR("*U H C*"), false); break;
          }
-         switch (get_highest_layer(layer_state)) {
-             case _NAV: oled_write_ln_P(PSTR("nav"), false); break;
-             case _NUM: oled_write_ln_P(PSTR("num"), false); break;
-             case _SYM: oled_write_ln_P(PSTR("sym"), false); break;
-             case _ADJUST: oled_write_ln_P(PSTR("adj"), false); break;
+         switch (layer) {
+             case _NAV: oled_write_ln_P(PSTR("ARROWS"), false); break;
+             case _NUM: oled_write_ln_P(PSTR("123456"), false); break;
+             case _SYM: oled_write_ln_P(PSTR("SYMBOL"), false); break;
+             case _ADJUST: oled_write_ln_P(PSTR("ADJUST"), false); break;
          }
          oled_render_keylog_r2g();
      } else {
@@ -93,30 +95,37 @@ bool oled_task_user() {
      return false;
 }
 
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    const uint8_t dlayer = get_highest_layer(default_layer_state);
-    const uint8_t layer = get_highest_layer(layer_state);
-    if (dlayer == _ALTERN) {
-        rgb_matrix_set_color(g_led_config.matrix_co[0][0], RGB_GOLD);
-    } if (dlayer == _GAME) {
-        rgb_matrix_set_color_all(RGB_OFF);
-        rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_GOLD);
-        rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
-        rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
-        rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
-    } else if (layer > 0) {
-        rgb_matrix_set_color_all(RGB_OFF);
+bool rgb_matrix_indicators_user() {
+     const int dlayer = get_highest_layer(default_layer_state);
+     const int layer = get_highest_layer(layer_state);
+     if (dlayer == _ALTERN) {
+         rgb_matrix_set_color(g_led_config.matrix_co[2][1], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][10], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][11], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][12], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][13], RGB_GOLD);
+     } if (dlayer == _GAME) {
+         rgb_matrix_set_color_all(RGB_OFF);
+         rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
+     }
+     if (layer > 0) {
+         rgb_matrix_set_color_all(RGB_OFF);
 
-        for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
-            for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
-                uint8_t index = g_led_config.matrix_co[row][col];
-                if (index >= led_min && index < led_max && index != NO_LED &&
-                keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                    rgb_matrix_set_color(index, RGB_PURPLE);
-                }
-            }
-        }
-    }
-    return false;
+         for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
+             for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
+                 uint8_t index = g_led_config.matrix_co[row][col];
+                 if (index != NO_LED && keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
+                     rgb_matrix_set_color(index, RGB_PURPLE);
+                 }
+             }
+         }
+     }
+     return false;
 }
 

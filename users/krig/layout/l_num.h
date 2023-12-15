@@ -6,9 +6,9 @@
 #define L_NUM_L2 _______, _______, _______, _______, _______
 #define L_NUM_L3 _______, _______, _______, _______, _______
 
-#define L_NUM_R1 SQ_PHEX,    KC_1,    KC_2,    KC_3, S(KC_G)
-#define L_NUM_R2    KC_J,    KC_4,    KC_5,    KC_6,    KC_0
-#define L_NUM_R3    KC_K,    KC_7,    KC_8,    KC_9, _______
+#define L_NUM_R1 _______,    KC_1,    KC_2,    KC_3, _______
+#define L_NUM_R2 _______,    KC_4,    KC_5,    KC_6,    KC_0
+#define L_NUM_R3 _______,    KC_7,    KC_8,    KC_9, _______
 
 #else
 
