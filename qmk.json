@@ -1,4 +1,10 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["lily58/r2g", "krig"],
+        ["ferris/sweep", "krig"],
+        ["preonic/rev3", "krig"],
+        ["waterfowl", "krig"],
+        ["sofle/rev1", "krig"]
+    ]
 }
