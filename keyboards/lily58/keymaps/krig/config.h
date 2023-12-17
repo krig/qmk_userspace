@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
 #define ENABLE_RGB_MATRIX_STARLIGHT
-#define ENABLE_RGB_MATRIX_RIVERFLOW
+#undef ENABLE_RGB_MATRIX_RIVERFLOW
 
 #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_STARLIGHT
 

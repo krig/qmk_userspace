@@ -96,6 +96,8 @@ bool oled_task_user() {
 }
 
 bool rgb_matrix_indicators_user() {
+     // cols = 6
+     // rows = 10
      const int dlayer = get_highest_layer(default_layer_state);
      const int layer = get_highest_layer(layer_state);
      if (dlayer == _ALTERN) {
@@ -103,10 +105,10 @@ bool rgb_matrix_indicators_user() {
          rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
          rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
          rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][10], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][11], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][12], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][13], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[7][1], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[7][2], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[7][3], RGB_GOLD);
+         rgb_matrix_set_color(g_led_config.matrix_co[7][4], RGB_GOLD);
      } if (dlayer == _GAME) {
          rgb_matrix_set_color_all(RGB_OFF);
          rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_GOLD);
@@ -117,13 +119,27 @@ bool rgb_matrix_indicators_user() {
      if (layer > 0) {
          rgb_matrix_set_color_all(RGB_OFF);
 
-         for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
-             for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
-                 uint8_t index = g_led_config.matrix_co[row][col];
-                 if (index != NO_LED && keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                     rgb_matrix_set_color(index, RGB_PURPLE);
-                 }
-             }
+         if (layer == _NAV) {
+            rgb_matrix_set_color(g_led_config.matrix_co[1][2], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[1][4], RGB_AZURE);
+         } else if (layer == _NUM) {
+            rgb_matrix_set_color(g_led_config.matrix_co[6][2], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][4], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][2], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][4], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][2], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][4], RGB_AZURE);
+         } else if (layer == _SYM) {
+            rgb_matrix_set_color(g_led_config.matrix_co[6][2], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][4], RGB_AZURE);
+         } else if (layer == _ADJUST) {
+            rgb_matrix_set_color(g_led_config.matrix_co[0][3], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[5][3], RGB_AZURE);
          }
      }
      return false;
