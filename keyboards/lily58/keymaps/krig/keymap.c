@@ -70,27 +70,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  )
 };
 
-void oled_render_keylog_r2g(void);
-void oled_render_logo_r2g(void);
-
 bool oled_task_user() {
      if (is_keyboard_master()) {
          const int dlayer = get_highest_layer(default_layer_state);
-         const int layer = get_highest_layer(layer_state);
          switch (dlayer) {
              case _ALTERN: oled_write_ln_P(PSTR("ALT!!!"), false); break;
              case _QWERTY: oled_write_ln_P(PSTR("QWERTY"), false); break;
              case _GAME: oled_write_ln_P(PSTR("*U H C*"), false); break;
          }
+     } else {
+         const int layer = get_highest_layer(layer_state);
          switch (layer) {
              case _NAV: oled_write_ln_P(PSTR("ARROWS"), false); break;
              case _NUM: oled_write_ln_P(PSTR("123456"), false); break;
              case _SYM: oled_write_ln_P(PSTR("SYMBOL"), false); break;
              case _ADJUST: oled_write_ln_P(PSTR("ADJUST"), false); break;
          }
-         oled_render_keylog_r2g();
-     } else {
-         oled_render_logo_r2g();
      }
      return false;
 }
@@ -120,26 +115,27 @@ bool rgb_matrix_indicators_user() {
          rgb_matrix_set_color_all(RGB_OFF);
 
          if (layer == _NAV) {
-            rgb_matrix_set_color(g_led_config.matrix_co[1][2], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[1][4], RGB_AZURE);
+             for (int i = 0; i < MATRIX_COLS; ++i)
+                 rgb_matrix_set_color(g_led_config.matrix_co[2][i], RGB_AZURE);
          } else if (layer == _NUM) {
-            rgb_matrix_set_color(g_led_config.matrix_co[6][2], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[6][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[6][4], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[7][2], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[7][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[7][4], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[8][2], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[8][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[8][4], RGB_AZURE);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][2], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][3], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[6][4], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][2], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][3], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][4], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[7][5], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][2], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][3], RGB_YELLOW);
+            rgb_matrix_set_color(g_led_config.matrix_co[8][4], RGB_YELLOW);
          } else if (layer == _SYM) {
-            rgb_matrix_set_color(g_led_config.matrix_co[6][2], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[6][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[6][4], RGB_AZURE);
+             for (int i = 0; i < MATRIX_COLS; ++i)
+                 rgb_matrix_set_color(g_led_config.matrix_co[7][i], RGB_AZURE);
          } else if (layer == _ADJUST) {
-            rgb_matrix_set_color(g_led_config.matrix_co[0][3], RGB_AZURE);
-            rgb_matrix_set_color(g_led_config.matrix_co[5][3], RGB_AZURE);
+             for (int i = 0; i < MATRIX_COLS; ++i) {
+                 rgb_matrix_set_color(g_led_config.matrix_co[0][i], RGB_AZURE);
+                 rgb_matrix_set_color(g_led_config.matrix_co[5][i], RGB_AZURE);
+             }
          }
      }
      return false;
