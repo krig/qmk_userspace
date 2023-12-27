@@ -1,0 +1,33 @@
+action = compile
+
+.PHONY: all ferris ferris-left ferris-right waterfowl lily58 preonic sofle moonlander m50
+
+all: ferris waterfowl lily58 preonic sofle moonlander m50
+
+ferris:
+	qmk compile -kb ferris/sweep -km krig
+
+ferris-left:
+	qmk flash -kb ferris/sweep -km krig -bl uf2-split-left
+
+ferris-right:
+	qmk flash -kb ferris/sweep -km krig -bl uf2-split-right
+
+waterfowl:
+	qmk ${action} -kb waterfowl -km krig
+
+lily58:
+	qmk ${action} -kb lily58/r2g -km krig
+
+preonic:
+	qmk ${action} -kb preonic/rev3 -km krig
+
+sofle:
+	qmk ${action} -kb sofle -km krig
+
+moonlander:
+	qmk ${action} -kb moonlander -km krig
+
+m50:
+	qmk ${action} -kb wilba_tech/rama_works_m50_a -km krig
+
