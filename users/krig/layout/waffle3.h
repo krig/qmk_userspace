@@ -11,9 +11,9 @@
 #define ALTERN_L2 KC_R, KC_S, KC_N, KC_T, KC_B
 #define ALTERN_L3 KC_W, KC_F, KC_L, KC_D, KC_V
 
-#define ALTERN_R1 KC_Q, KC_Y, KC_O, KC_U, KC_QUOT
+#define ALTERN_R1 KC_Q, KC_Y, KC_O, KC_U, KC_COMM
 #define ALTERN_R2 KC_P, KC_H, KC_E, KC_I, KC_A
-#define ALTERN_R3 KC_J, KC_K, KC_MINS, KC_DOT, KC_COMM
+#define ALTERN_R3 KC_J, KC_K, KC_MINS, KC_DOT, KC_QUOT
 
 #endif
 
