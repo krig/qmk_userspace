@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       BOTTOM_ROW
     ),
     [_GAME] = LAYOUT_wrapper(
-       KC_GRV,     NUMROW_L,     NUMROW_R, TG(_MOUSE),
+       KC_GRV,     NUMROW_L,     NUMROW_R, KC_ESC,
        KC_TAB,    QWERTY_L1,    QWERTY_R1, KC_BSPC,
       KC_LCTL,    QWERTY_L2,    QWERTY_R2, CTL_ENT,
       KC_LSFT,    QWERTY_L3,    QWERTY_R3, KC_RSFT,
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_ADJUST] = LAYOUT_wrapper(
       DF_QWER,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  KC_INS,
+      DF_GAME, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  KC_INS,
       RGB_TOG, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       RGB_MOD, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT
