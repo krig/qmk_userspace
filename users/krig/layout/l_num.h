@@ -3,7 +3,7 @@
 #ifdef KRIG_NUMPAD
 
 #define L_NUM_L1 _______, _______, _______, _______, _______
-#define L_NUM_L2 _______, _______, _______, _______, _______
+#define L_NUM_L2 KC_LALT, KC_LCTL, KC_LGUI, KC_LSFT, KC_RALT
 #define L_NUM_L3 _______, _______, _______, _______, _______
 
 #define L_NUM_R1 _______,    KC_1,    KC_2,    KC_3, _______
