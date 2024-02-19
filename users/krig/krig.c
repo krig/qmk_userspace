@@ -27,6 +27,12 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
     {THUMB_R1, KC_LCTL},
     {THUMB_R1, KC_LSFT},
     {THUMB_R1, KC_RALT},
+
+    {MO(_NUM), KC_LALT},
+    {MO(_NUM), KC_LGUI},
+    {MO(_NUM), KC_LCTL},
+    {MO(_NUM), KC_LSFT},
+    {MO(_NUM), KC_RALT},
 };
 // for layers configuration follow this format:
 // * custom layer key
