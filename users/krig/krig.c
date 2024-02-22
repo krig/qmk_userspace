@@ -5,9 +5,9 @@
 #ifdef KRIG_CUSTOM_SHIFT
 #include "features/custom_shift_keys.h"
 const custom_shift_key_t custom_shift_keys[] = {
-    {  KC_DOT, KC_EXCL },
-    { KC_COMM, KC_QUES },
-    { KC_UNDS, KC_MINS },
+    {  KC_DOT, KC_COMM },
+    { KC_UNDS, KC_QUES },
+    { KC_MINS, KC_BSLS },
 };
 
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys)/sizeof(custom_shift_key_t);
