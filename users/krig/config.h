@@ -30,7 +30,7 @@
     #define STARTUP_SONG SONG(MINOR_SOUND)
 #endif
 
-#define FLOW_COUNT 10
+#define FLOW_COUNT 15
 #define FLOW_LAYERS_COUNT 1
 
 /*
