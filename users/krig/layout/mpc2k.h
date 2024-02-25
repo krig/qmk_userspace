@@ -12,7 +12,7 @@
 #define ALTERN_L3 KC_X, KC_B, KC_L, KC_D, KC_V
 #define ALTERN_R1 KC_J, KC_P, KC_O, KC_U, KC_MINS
 #define ALTERN_R2 KC_Y, KC_C, KC_A, KC_E, KC_I
-#define ALTERN_R3 KC_Z, KC_G, KC_DOT, KC_QUOT, KC_UNDS
+#define ALTERN_R3 KC_Z, KC_G, KC_DOT, KC_QUOT, KC_COMM
 
 #endif
 
