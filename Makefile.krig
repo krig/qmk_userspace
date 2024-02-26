@@ -1,8 +1,8 @@
 action = compile
 
-.PHONY: all ferris ferris-left ferris-right waterfowl lily58 preonic sofle moonlander m50
+.PHONY: all 3w6 ferris ferris-left ferris-right waterfowl lily58 preonic sofle moonlander m50
 
-all: ferris waterfowl lily58 preonic sofle moonlander m50
+all: ferris waterfowl lily58 preonic sofle moonlander m50 3w6
 
 ferris:
 	qmk compile -kb ferris/sweep -km krig
@@ -31,3 +31,5 @@ moonlander:
 m50:
 	qmk ${action} -kb wilba_tech/rama_works_m50_a -km krig
 
+3w6:
+	qmk ${action} -kb beekeeb/3w6hs -km krig
