@@ -170,7 +170,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 }
 
 static bool is_finger_key(uint16_t keycode) {
-    return (keycode <= KC_0 || (keycode >= KC_SEMICOLON && keycode <= KC_SLASH));
+    return (keycode <= KC_0 || (keycode >= KC_SEMICOLON && keycode <= KC_SLASH) || keycode == QK_REP);
 }
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
