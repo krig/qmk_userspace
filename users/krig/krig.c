@@ -157,16 +157,23 @@ void matrix_scan_user(void) {
     matrix_scan_keymap();
 }
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+static bool is_thumb_key(uint16_t keycode) {
     switch (keycode) {
+        case THUMB_L1:
         case THUMB_L2:
+        case THUMB_L3:
         case THUMB_R1:
         case THUMB_R2:
+        case THUMB_R3:
             return true;
         default:
             // Do not select the hold action when another key is pressed.
             return false;
     }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    return is_thumb_key(keycode);
 }
 
 static bool is_finger_key(uint16_t keycode) {
@@ -175,8 +182,7 @@ static bool is_finger_key(uint16_t keycode) {
 
 uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     // Get base keycode
-    if ((tap_hold_keycode >= QK_MOD_TAP && tap_hold_keycode <= QK_MOD_TAP_MAX) ||
-        (tap_hold_keycode >= QK_LAYER_TAP && tap_hold_keycode <= QK_LAYER_TAP_MAX)) {
+    if (IS_QK_MOD_TAP(tap_hold_keycode) || IS_QK_LAYER_TAP(tap_hold_keycode)) {
         tap_hold_keycode &= 0xff;
     }
     if (is_finger_key(tap_hold_keycode)) {
@@ -186,30 +192,12 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     }
 }
 
-
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-    // Get base keycode
-    if ((tap_hold_keycode >= QK_MOD_TAP && tap_hold_keycode <= QK_MOD_TAP_MAX) ||
-        (tap_hold_keycode >= QK_LAYER_TAP && tap_hold_keycode <= QK_LAYER_TAP_MAX)) {
-        tap_hold_keycode &= 0xff;
-    }
-
-    static const uint16_t homerow_qwerty[] = { QWERTY_R2 };
-    static const uint16_t homerow_altern[] = { ALTERN_R2 };
-    const uint16_t* homerow = homerow_qwerty;
-    if (IS_LAYER_ON_STATE(default_layer_state, _ALTERN)) {
-        homerow = homerow_altern;
-    }
-    if (is_finger_key(tap_hold_keycode)) {
-        for (int i = 0; i < (sizeof(homerow_qwerty) / sizeof(homerow_qwerty[0])); ++i) {
-            if (other_keycode == homerow[i])
-                return true;
-        }
-        return false;
-    } else {
+    if (is_thumb_key(tap_hold_keycode)) {
         return true;
     }
+    return achordion_opposite_hands(tap_hold_record, other_record);
 }
