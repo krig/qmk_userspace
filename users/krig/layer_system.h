@@ -15,12 +15,12 @@ enum custom_layers {
 
 #define THUMB_L1 KC_SPC
 #define THUMB_L2 LT(_NAV, KC_ESC)
-#define THUMB_L3 LT(_NUM, KC_TAB)
+#define THUMB_L3 MO(_NUM)
 #define THUMB_L4 QK_REP
 
 #define THUMB_R1 LSFT_T(KC_ENT)
 #define THUMB_R2 LT(_SYM, KC_BSPC)
-#define THUMB_R3 RGUI_T(KC_DEL)
+#define THUMB_R3 KC_TAB
 #define THUMB_R4 QK_AREP
 
 #define ALT_THUMB_R2 LT(_SYM, KC_ENT)
