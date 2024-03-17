@@ -8,6 +8,6 @@
 
 #define QWERTY_R1 KC_Y, KC_U, KC_I, KC_O, KC_P
 #define QWERTY_R2 KC_H, KC_J, KC_K, KC_L, KC_QUOT
-#define QWERTY_R3 KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH
+#define QWERTY_R3 KC_N, KC_M, KC_COMM, KC_DOT, KC_DQUO
 
 #endif

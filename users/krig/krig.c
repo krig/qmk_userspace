@@ -7,6 +7,8 @@
 const custom_shift_key_t custom_shift_keys[] = {
     {  KC_DOT, KC_EXLM },
     { KC_COMM, KC_QUES },
+    { KC_QUOT, KC_UNDS },
+    { KC_DQUO, KC_MINS },
 };
 
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys)/sizeof(custom_shift_key_t);
@@ -200,4 +202,24 @@ bool achordion_chord(uint16_t tap_hold_keycode,
         return true;
     }
     return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record) {
+    switch (keycode) {
+        case DF_QWER:
+            if (record->event.pressed) {
+                if (layer_state_cmp(default_layer_state, _QWERTY)) {
+                    set_single_persistent_default_layer(_ALTERN);
+                } else {
+                    set_single_persistent_default_layer(_QWERTY);
+                }
+            }
+            return false;
+        case DF_GAME:
+            if (record->event.pressed) {
+                default_layer_xor(1 << _GAME);
+            }
+            return false;
+    };
+    return true;
 }

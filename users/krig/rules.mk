@@ -9,6 +9,5 @@ SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 
 SRC += krig.c
-SRC += layer_system.c
 SRC += features/achordion.c
 SRC += features/flow.c
