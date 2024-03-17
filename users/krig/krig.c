@@ -117,9 +117,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 SEND_STRING("<-");
             }
             return false;
-        case SQ_EXPI: // <-
+        case SQ_PIPR: // |>
             if (record->event.pressed) {
                 SEND_STRING("|>");
+            }
+            return false;
+        case SQ_PIPL: // <|
+            if (record->event.pressed) {
+                SEND_STRING("<|");
             }
             return false;
     }
