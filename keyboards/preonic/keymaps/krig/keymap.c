@@ -10,7 +10,7 @@
 #include "features/layer_lock.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
-#define BOTTOM_ROW KC_MEH, CTL_SFT, KC_LALT, KC_LGUI, MO(_NAV), KC_SPC,  LT(_NUM, KC_SPC), LT(_SYM, KC_BSPC), KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT
+#define BOTTOM_ROW KC_ESC, CTL_SFT, KC_LALT, KC_LGUI, MO(_NAV), KC_SPC,  LSFT_T(KC_SPC), LT(_SYM, KC_BSPC), KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT
 #define OSM_SFR OSM(MOD_RSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       BOTTOM_ROW
     ),
     [_GAME] = LAYOUT_wrapper(
-       KC_GRV,     NUMROW_L,     NUMROW_R, KC_ESC,
+       KC_GRV,     NUMROW_L,     NUMROW_R, KC_F9,
        KC_TAB,    QWERTY_L1,    QWERTY_R1, KC_BSPC,
       KC_LCTL,    QWERTY_L2,    QWERTY_R2, CTL_ENT,
       KC_LSFT,    QWERTY_L3,    QWERTY_R3, KC_RSFT,
@@ -75,13 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 const rgblight_segment_t PROGMEM lightlayer_0[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_GREEN});
 const rgblight_segment_t PROGMEM lightlayer_1[] = RGBLIGHT_LAYER_SEGMENTS({3, 3, HSV_GREEN});
-const rgblight_segment_t PROGMEM lightlayer_2[] = RGBLIGHT_LAYER_SEGMENTS({RGBLED_NUM-3, 3, HSV_GREEN});
-const rgblight_segment_t PROGMEM lightlayer_3[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_YELLOW}, {RGBLED_NUM-1, 1, HSV_BLUE});
+const rgblight_segment_t PROGMEM lightlayer_2[] = RGBLIGHT_LAYER_SEGMENTS({RGBLIGHT_LED_COUNT-3, 3, HSV_GREEN});
+const rgblight_segment_t PROGMEM lightlayer_3[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_YELLOW}, {RGBLIGHT_LED_COUNT-1, 1, HSV_BLUE});
 const rgblight_segment_t PROGMEM lightlayer_4[] = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_MAGENTA});
-const rgblight_segment_t PROGMEM lightlayer_5[] = RGBLIGHT_LAYER_SEGMENTS({RGBLED_NUM-4, 4, HSV_AZURE});
-const rgblight_segment_t PROGMEM lightlayer_6[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_PURPLE});
-const rgblight_segment_t PROGMEM lightlayer_7[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_ORANGE});
-const rgblight_segment_t PROGMEM lightlayer_capsword[] = RGBLIGHT_LAYER_SEGMENTS({0, 2, HSV_RED}, {RGBLED_NUM-2, 2,});
+const rgblight_segment_t PROGMEM lightlayer_5[] = RGBLIGHT_LAYER_SEGMENTS({RGBLIGHT_LED_COUNT-4, 4, HSV_AZURE});
+const rgblight_segment_t PROGMEM lightlayer_6[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLIGHT_LED_COUNT, HSV_PURPLE});
+const rgblight_segment_t PROGMEM lightlayer_7[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLIGHT_LED_COUNT, HSV_ORANGE});
+const rgblight_segment_t PROGMEM lightlayer_capsword[] = RGBLIGHT_LAYER_SEGMENTS({0, 2, HSV_RED}, {RGBLIGHT_LED_COUNT-2, 2,});
 
 const rgblight_segment_t* const PROGMEM lightlayers[] = RGBLIGHT_LAYERS_LIST(
     lightlayer_0,
