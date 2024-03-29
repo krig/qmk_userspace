@@ -83,7 +83,11 @@ enum custom_layers {
 #define ZOOM_IN LGUI(KC_PLUS)
 #define ZOOM_UT LGUI(KC_MINS)
 
+#ifdef KRIG_34KEY
+#define THUMB_L1 LT(_NUM, KC_SPC)
+#else
 #define THUMB_L1 KC_SPC
+#endif
 #define THUMB_L2 LT(_NAV, KC_ESC)
 #define THUMB_L3 MO(_NUM)
 #define THUMB_L4 QK_REP
@@ -92,8 +96,6 @@ enum custom_layers {
 #define THUMB_R2 LT(_SYM, KC_BSPC)
 #define THUMB_R3 LCMD_T(KC_TAB)
 #define THUMB_R4 QK_AREP
-
-#define ALT_THUMB_R2 LT(_SYM, KC_ENT)
 
 // toggles between qwerty and AKL
 #define DF_QWER  DF(_QWERTY)

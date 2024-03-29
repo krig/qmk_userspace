@@ -10,7 +10,9 @@
 #include "features/layer_lock.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
-#define BOTTOM_ROW KC_ESC, CTL_SFT, KC_LALT, KC_LGUI, MO(_NAV), KC_SPC,  LSFT_T(KC_SPC), LT(_SYM, KC_BSPC), KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT
+#define BOTTOM_ROW \
+            KC_ESC,  CTL_SFT, KC_LALT, KC_LGUI, THUMB_L2, THUMB_L1,  \
+    LSFT_T(KC_SPC), THUMB_R2, KC_LEFT, KC_DOWN,    KC_UP,  KC_RGHT
 #define OSM_SFR OSM(MOD_RSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

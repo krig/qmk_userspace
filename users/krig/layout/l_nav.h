@@ -1,7 +1,7 @@
 // nav layer
 
 #define L_NAV_L1 CMD_TAB, CMD_GRV, GUI_SPC, LCTL_W,  KC_TAB
-#define L_NAV_L2 KC_LALT, KC_LCTL, KC_LGUI, KC_LSFT, MO(_NUM)
+#define L_NAV_L2 KC_LALT, KC_LCTL, KC_LGUI, KC_LSFT, CW_TOGG
 #define L_NAV_L3  GUI__Z,  GUI__X,  GUI__C,  GUI__V, KC_DEL
 
 #define L_NAV_R1  KC_INS,  KC_DEL,  SWE_AA,  SWE_OE, SQ_LTLT

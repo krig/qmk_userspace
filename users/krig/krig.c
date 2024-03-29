@@ -7,8 +7,6 @@
 const custom_shift_key_t custom_shift_keys[] = {
     {  KC_DOT, KC_EXLM },
     { KC_COMM, KC_QUES },
-    { KC_QUOT, KC_UNDS },
-    { KC_DQUO, KC_MINS },
 };
 
 uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys)/sizeof(custom_shift_key_t);
@@ -172,6 +170,7 @@ static bool is_thumb_key(uint16_t keycode) {
         case THUMB_R1:
         case THUMB_R2:
         case THUMB_R3:
+        case LSFT_T(KC_SPC):
             return true;
         default:
             // Do not select the hold action when another key is pressed.
