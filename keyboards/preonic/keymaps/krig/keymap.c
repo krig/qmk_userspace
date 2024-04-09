@@ -35,14 +35,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TAB,    QWERTY_L1,    QWERTY_R1, KC_BSPC,
       KC_LCTL,    QWERTY_L2,    QWERTY_R2, CTL_ENT,
       KC_LSFT,    QWERTY_L3,    QWERTY_R3, KC_RSFT,
-      BOTTOM_ROW
+      KC_NO, CTL_SFT, KC_LALT, KC_LGUI, THUMB_L2, THUMB_L1,  \
+    KC_SPC, THUMB_R2, KC_LEFT, KC_DOWN,    KC_UP,  KC_RGHT
     ),
     [_NAV] = LAYOUT_wrapper(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       _______, L_NAV_L1, L_NAV_R1, _______,
-      _______, L_NAV_L2, L_NAV_R2, _______,
+      CW_TOGG, L_NAV_L2, L_NAV_R2, _______,
       _______, L_NAV_L3, L_NAV_R3, _______,
-      _______, _______, _______, _______, _______, _______, KC_TAB, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+      _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
     ),
     [_NUM] = LAYOUT_wrapper(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -130,11 +131,4 @@ layer_state_t layer_state_set_keymap(layer_state_t state) {
         rgblight_set_layer_state(i, layer_state_cmp(state, i));
     }
     return state;
-}
-
-bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {
-    if (!process_layer_lock(keycode, record, LLOCK)) {
-        return false;
-    }
-    return true;
 }
