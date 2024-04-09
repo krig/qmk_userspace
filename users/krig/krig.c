@@ -48,9 +48,11 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+#ifndef KRIG_MONOBLOCK
     if (!process_achordion(keycode, record)) {
         return false;
     }
+#endif
     if (!update_flow(keycode, record->event.pressed, record->event.key)) {
         return false;
     }
@@ -157,7 +159,9 @@ void matrix_scan_keymap(void) {
 }
 
 void matrix_scan_user(void) {
+#ifndef KRIG_MONOBLOCK
     achordion_task();
+#endif
     flow_matrix_scan();
     matrix_scan_keymap();
 }

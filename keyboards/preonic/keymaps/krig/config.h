@@ -15,3 +15,4 @@
 #define KRIG_CAPS_WORD
 #define KRIG_MOUSE_LAYER
 #define KRIG_NUMPAD
+#define KRIG_MONOBLOCK
