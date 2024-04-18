@@ -202,6 +202,12 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
     }
 }
 
+#ifdef KRIG_3W6HS
+static bool on_left_hand(keypos_t pos) {
+  return pos.row < MATRIX_ROWS / 2;
+}
+#endif
+
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
@@ -209,7 +215,12 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     if (is_thumb_key(tap_hold_keycode)) {
         return true;
     }
+#ifdef KRIG_3W6HS
+  return on_left_hand(tap_hold_record->event.key) !=
+         on_left_hand(other_record->event.key);
+#else
     return achordion_opposite_hands(tap_hold_record, other_record);
+#endif
 }
 
 bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record) {
