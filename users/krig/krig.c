@@ -173,7 +173,7 @@ static bool is_thumb_key(uint16_t keycode) {
         case THUMB_L3:
         case THUMB_R1:
         case THUMB_R2:
-        case THUMB_R3:
+        //case THUMB_R3: // currently same as L3
         case LSFT_T(KC_SPC):
             return true;
         default:
