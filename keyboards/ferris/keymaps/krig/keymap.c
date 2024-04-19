@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     L_NUM_L1, L_NUM_R1,
     L_NUM_L2, L_NUM_R2,
     L_NUM_L3, L_NUM_R3,
-    KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS
+    KC_TRNS, KC_TRNS,  KC_LGUI, KC_LCTL
   ),
   [_SYM] = LAYOUT_wrapper(
     L_SYM_L1, L_SYM_R1,
