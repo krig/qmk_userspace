@@ -173,7 +173,7 @@ static bool is_thumb_key(uint16_t keycode) {
         case THUMB_L3:
         case THUMB_R1:
         case THUMB_R2:
-        //case THUMB_R3: // currently same as L3
+        case THUMB_R3: // currently same as L3
         case LSFT_T(KC_SPC):
             return true;
         default:
@@ -203,7 +203,7 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
 }
 
 #ifdef KRIG_3W6HS
-static bool on_left_hand(keypos_t pos) {
+static bool k3w6hs_left_hand(keypos_t pos) {
   return pos.row < MATRIX_ROWS / 2;
 }
 #endif
@@ -216,8 +216,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
         return true;
     }
 #ifdef KRIG_3W6HS
-  return on_left_hand(tap_hold_record->event.key) !=
-         on_left_hand(other_record->event.key);
+  return k3w6hs_left_hand(tap_hold_record->event.key) !=
+         k3w6hs_left_hand(other_record->event.key);
 #else
     return achordion_opposite_hands(tap_hold_record, other_record);
 #endif

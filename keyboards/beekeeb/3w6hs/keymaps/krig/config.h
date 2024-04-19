@@ -22,5 +22,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KRIG_CUSTOM_SEQUENCES
 #define KRIG_CAPS_WORD
 #define KRIG_MOUSE_LAYER
-#define KRIG_NUMPAD
 #define KRIG_3W6HS

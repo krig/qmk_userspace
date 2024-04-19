@@ -27,7 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define KRIG_CUSTOM_SHIFT
 #define KRIG_CAPS_WORD
-#define KRIG_NUMPAD
 
 #   undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 #   undef ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT

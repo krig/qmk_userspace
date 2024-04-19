@@ -83,13 +83,9 @@ enum custom_layers {
 #define ZOOM_IN LGUI(KC_PLUS)
 #define ZOOM_UT LGUI(KC_MINS)
 
-#ifdef KRIG_34KEY
-#define THUMB_L1 LT(_NUM, KC_SPC)
-#else
 #define THUMB_L1 KC_SPC
-#endif
 #define THUMB_L2 LT(_NAV, KC_ESC)
-#define THUMB_L3 LT(_NUM, KC_TAB)
+#define THUMB_L3 LT(_MOUSE, KC_TAB)
 #define THUMB_L4 QK_REP
 
 #define THUMB_R1 LSFT_T(KC_ENT)
@@ -107,7 +103,7 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record);
 #define NUMROW_R KC_6,     KC_7,    KC_8,    KC_9,    KC_0
 
 #include "layout/qwerty.h" // standard layout
-#include "layout/mpc2k.h"  // alternative layout
+#include "layout/altern.h"  // alternative layout
 #include "layout/l_nav.h"  // navigation layer
 #include "layout/l_num.h"  // number layer
 #include "layout/l_sym.h"  // symbol layer
