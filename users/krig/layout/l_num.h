@@ -1,6 +1,6 @@
 // number layer
 #define L_NUM_L1 _______, _______, _______, _______, _______
-#define L_NUM_L2 KC_LALT, KC_LCTL, KC_LGUI, KC_LSFT, KC_RALT
+#define L_NUM_L2 _______, _______, _______, _______, _______
 #define L_NUM_L3 _______, _______, _______, _______, _______
 
 #define L_NUM_R1 _______,    KC_4,    KC_5,    KC_6, _______
