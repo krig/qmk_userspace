@@ -103,11 +103,12 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record);
 #define NUMROW_R KC_6,     KC_7,    KC_8,    KC_9,    KC_0
 
 #include "layout/qwerty.h" // standard layout
-#include "layout/altern.h"  // alternative layout
-#include "layout/l_nav.h"  // navigation layer
-#include "layout/l_num.h"  // number layer
-#include "layout/l_sym.h"  // symbol layer
-#include "layout/l_mouse.h"
+#include "layout/resentmak.h"  // alternative layout
+#include "layout/nav.h"  // navigation layer
+#include "layout/num.h"  // number layer
+#include "layout/sym.h"  // symbol layer
+#include "layout/mouse.h"
+#include "layout/adj34.h"
 
 #ifdef KRIG_CAPS_WORD
 #include "features/krig_caps_word.h"

@@ -6,5 +6,5 @@
 
 #define L_NAV_R1  KC_INS,  KC_DEL,  SWE_AA,  SWE_OE, _______
 #define L_NAV_R2 KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  SWE_AE
-#define L_NAV_R3 KC_HOME, KC_PGDN, KC_PGUP,  KC_END, LSG(KC_4)
+#define L_NAV_R3 KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______
 
