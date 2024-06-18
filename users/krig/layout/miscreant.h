@@ -1,9 +1,9 @@
 #pragma once
-// mycelimak
+// miscreant
 //
-// q w h f k j p o u ,
+// q w h f k j p o u /
 // r s n t m y c a e i
-// x b l d v z g . ' /
+// x b l d v z g . ' ,
 
 #ifndef ALTERN_L1
 
