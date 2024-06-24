@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     L_MOUSE_L3, L_MOUSE_R3,
     KC_TRNS, KC_TRNS, KC_BTN1, KC_TRNS
   ),
-  [_ADJUST] = LAYOUT(
+  [_ADJUST] = LAYOUT_wrapper(
     L_ADJ34_L1, L_ADJ34_R1,
     L_ADJ34_L2, L_ADJ34_R2,
     L_ADJ34_L3, L_ADJ34_R3,
