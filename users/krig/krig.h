@@ -63,6 +63,7 @@ enum custom_layers {
 #define OSM_SFT OSM(MOD_LSFT)
 
 #define LCTL_W LCTL(KC_W)
+#define SFT_TAB LSFT(KC_TAB)
 
 // Preonic specials
 #define CTL_ENT RCTL_T(KC_ENT)
