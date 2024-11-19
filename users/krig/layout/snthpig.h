@@ -1,7 +1,7 @@
 #pragma once
-// q f h k v j y o u å
+// q f h k v j y o u ö
 // r s n t p g c a e i
-// x m l d b z w . ä ö
+// x m l d b z w . å ä
 #define QWERTY_L1 KC_Q, KC_F, KC_H, KC_K, KC_V
 #define QWERTY_L2 KC_R, KC_S, KC_N, KC_T, KC_P
 #define QWERTY_L3 KC_X, KC_M, KC_L, LT(_NUM, KC_D), KC_B
