@@ -10,4 +10,3 @@ AUDIO_ENABLE = yes
 SRC += matrix.c
 SRC += features/custom_shift_keys.c
 SRC += features/krig_caps_word.c
-SRC += features/layer_lock.c
