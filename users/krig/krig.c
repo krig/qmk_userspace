@@ -16,6 +16,12 @@ uint8_t NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys)/sizeof(custom_shift_ke
 // * layer keycode
 // * modifier keycode
 const uint16_t flow_config[FLOW_COUNT][2] = {
+    {THUMB_L1, KC_LALT},
+    {THUMB_L1, KC_LGUI},
+    {THUMB_L1, KC_LCTL},
+    {THUMB_L1, KC_LSFT},
+    {THUMB_L1, KC_RALT},
+
     {THUMB_L2, KC_LALT},
     {THUMB_L2, KC_LGUI},
     {THUMB_L2, KC_LCTL},
@@ -27,6 +33,18 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
     {THUMB_R1, KC_LCTL},
     {THUMB_R1, KC_LSFT},
     {THUMB_R1, KC_RALT},
+
+    {THUMB_R2, KC_LALT},
+    {THUMB_R2, KC_LGUI},
+    {THUMB_R2, KC_LCTL},
+    {THUMB_R2, KC_LSFT},
+    {THUMB_R2, KC_RALT},
+
+    {LT(_NUM, KC_D), KC_LALT},
+    {LT(_NUM, KC_D), KC_LGUI},
+    {LT(_NUM, KC_D), KC_LCTL},
+    {LT(_NUM, KC_D), KC_LSFT},
+    {LT(_NUM, KC_D), KC_RALT},
 
     {MO(_NUM), KC_LALT},
     {MO(_NUM), KC_LGUI},

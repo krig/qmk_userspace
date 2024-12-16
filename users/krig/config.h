@@ -30,8 +30,7 @@
     #define STARTUP_SONG SONG(MINOR_SOUND)
 #endif
 
-#define FLOW_COUNT 15
-#define FLOW_LAYERS_COUNT 1
+#define FLOW_COUNT 30
 
 /*
 #define KRIG_CUSTOM_SHIFT
