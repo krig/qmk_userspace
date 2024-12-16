@@ -34,13 +34,6 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
     {MO(_NUM), KC_LSFT},
     {MO(_NUM), KC_RALT},
 };
-// for layers configuration follow this format:
-// * custom layer key
-// * layer name
-const uint16_t flow_layers_config[FLOW_LAYERS_COUNT][2] = {
-    {OSL_ADJ, _ADJUST},
-};
-
 
 __attribute__ ((weak))
 bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {

@@ -17,7 +17,6 @@ enum custom_keycodes {
     LLOCK,                // layer lock
     CMD_TAB,              // single-key cmd+tab (features/swapper)
     CMD_GRV,              // single-key cmd+` (features/swapper)
-    OSL_ADJ,              // flow one-shot adjust layer
 
     NEW_SAFE_RANGE,
 };
