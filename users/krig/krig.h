@@ -90,7 +90,11 @@ enum custom_layers {
 
 #define THUMB_R1 LSFT_T(KC_ENT)
 #define THUMB_R2 LT(_SYM, KC_BSPC)
+#ifdef KRIG_MOUSE_LAYER
 #define THUMB_R3 LT(_MOUSE, KC_BSPC)
+#else
+#define THUMB_R3 KC_BSPC
+#endif
 #define THUMB_R4 QK_AREP
 
 // toggles between qwerty and AKL
