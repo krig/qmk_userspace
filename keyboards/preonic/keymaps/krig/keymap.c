@@ -12,7 +12,7 @@
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
 #define BOTTOM_ROW \
             KC_ESC,  CTL_SFT, KC_LALT, KC_LGUI, THUMB_L2, THUMB_L1,  \
-    LSFT_T(KC_SPC), THUMB_R2, KC_LEFT, KC_DOWN,    KC_UP,  KC_RGHT
+    THUMB_R1, THUMB_R2, KC_LEFT, KC_DOWN,    KC_UP,  KC_RGHT
 #define OSM_SFR OSM(MOD_RSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
