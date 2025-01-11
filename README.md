@@ -1,4 +1,21 @@
-# QMK Userspace
+# QMK configurations for my keyboards
+
+Current set of keyboards configured with this repository:
+
+- Ferris Sweep (choc)
+- Waterfowl (choc)
+- Lily58 (MX)
+- Preonic (MX)
+- Sofle (MX)
+- ZSA Moonlander (MX)
+- RAMA Works M50-A (MX)
+- 3w6 (choc)
+
+## Keymap
+
+![Keymap](my_keymap.svg)
+
+# Original QMK documentation
 
 This is a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the main QMK repository.
 
