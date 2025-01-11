@@ -9,7 +9,7 @@ Current set of keyboards configured with this repository:
 - Sofle (MX)
 - ZSA Moonlander (MX)
 - RAMA Works M50-A (MX)
-- 3w6 (choc)
+- Beekeeb 3W6HS (choc)
 
 ## Keymap
 
