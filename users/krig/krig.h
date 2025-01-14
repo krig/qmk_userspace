@@ -108,7 +108,7 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record);
 
 //#include "layout/qwerty.h"
 #include "layout/snthpig.h"
-#include "layout/snthpig-adj.h"
+#include "layout/snthpig-alt.h"
 #include "layout/nav.h"
 #include "layout/num.h"
 #include "layout/sym.h"
