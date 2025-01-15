@@ -11,7 +11,7 @@
 
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
 #define BOTTOM_ROW \
-            KC_ESC,  CTL_SFT, KC_LALT, KC_LGUI, THUMB_L2, THUMB_L1,  \
+            CW_TOGG,  CTL_SFT, KC_LALT, KC_LGUI, THUMB_L2, THUMB_L1,  \
     THUMB_R1, THUMB_R2, KC_LEFT, KC_DOWN,    KC_UP,  KC_RGHT
 #define OSM_SFR OSM(MOD_RSFT)
 
@@ -19,15 +19,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ALTERN] = LAYOUT_wrapper(
        KC_GRV,     NUMROW_L,     NUMROW_R, TG(_MOUSE),
        KC_TAB,    ALTERN_L1,    ALTERN_R1, KC_BSPC,
-      CTL_ESC,    ALTERN_L2,    ALTERN_R2, CTL_ENT,
-      OSM_SFT,    ALTERN_L3,    ALTERN_R3, OSM_SFR,
+      CTL_ESC,    ALTERN_L2,    ALTERN_R2, KC_QUOT,
+      KC_LSFT,    ALTERN_L3,    ALTERN_R3, OSM_SFR,
       BOTTOM_ROW
     ),
     [_QWERTY] = LAYOUT_wrapper(
        KC_GRV,     NUMROW_L,     NUMROW_R, TG(_MOUSE),
        KC_TAB,    QWERTY_L1,    QWERTY_R1, KC_BSPC,
-      CTL_ESC,    QWERTY_L2,    QWERTY_R2, CTL_ENT,
-      OSM_SFT,    QWERTY_L3,    QWERTY_R3, OSM_SFR,
+      CTL_ESC,    QWERTY_L2,    QWERTY_R2, KC_QUOT,
+      KC_LSFT,    QWERTY_L3,    QWERTY_R3, OSM_SFR,
       BOTTOM_ROW
     ),
     [_GAME] = LAYOUT_wrapper(
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT_wrapper(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       _______, L_NAV_L1, L_NAV_R1, _______,
-      CW_TOGG, L_NAV_L2, L_NAV_R2, _______,
+      _______, L_NAV_L2, L_NAV_R2, _______,
       _______, L_NAV_L3, L_NAV_R3, _______,
       _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
     ),
