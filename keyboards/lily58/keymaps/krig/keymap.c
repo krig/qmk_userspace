@@ -61,11 +61,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, L_SYM_L3, _______, _______, L_SYM_R3, _______,
                              _______, _______, _______, _______,  _______, _______, _______, _______
  ),
- [_ADJUST] = LAYOUT(
-  DF_QWER,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
-  DF_GAME, _______, _______, _______, _______, _______,                   RGB_TOG, RGB_MOD, RGB_M_P, RGB_M_B, _______,  KC_INS,
-  _______, _______, _______, _______, _______, _______,                   RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT,
+ [_ADJUST] = LAYOUT_wrapper(
+  RGB_TOG, L_ADJ34_L1,                   L_ADJ34_R1,  KC_F11,
+  RGB_MOD, L_ADJ34_L1,                   L_ADJ34_R1,  KC_INS,
+  RGB_VAI, L_ADJ34_L2,                   L_ADJ34_R2, _______,
+  RGB_VAD, L_ADJ34_L3, _______, _______, L_ADJ34_R3, _______,
                              _______, _______, _______, _______, _______, _______, _______, _______
  )
 };
