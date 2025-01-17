@@ -18,27 +18,29 @@
 #include "krig.h"
 #define LAYOUT_wrapper(...)             LAYOUT(__VA_ARGS__)
 
+#define THUMB_ROW KC_LEFT, KC_RGHT, THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, KC_DOWN, KC_UP
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT_wrapper(
    KC_GRV,         NUMROW_L,                    NUMROW_R, GUI_SPC,
    KC_TAB,        QWERTY_L1,                   QWERTY_R1, SWE_AA,
   CTL_ESC,        QWERTY_L2,                   QWERTY_R2, SWE_AE,
-  OSM_SFT,        QWERTY_L3, QK_REP,  TT(_NUM), QWERTY_R3, SWE_OE,
-  KC_LALT, KC_LGUI, THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, RGUI_T(KC_PGDN), RALT_T(KC_PGUP)
+  OSM_SFT,        QWERTY_L3, QK_REP,  QK_AREP, QWERTY_R3, SWE_OE,
+  THUMB_ROW
  ),
  [_ALTERN] = LAYOUT_wrapper(
    KC_GRV,         NUMROW_L,                    NUMROW_R, GUI_SPC,
    KC_TAB,        ALTERN_L1,                   ALTERN_R1, SWE_AA,
   CTL_ESC,        ALTERN_L2,                   ALTERN_R2, SWE_AE,
-  OSM_SFT,        ALTERN_L3, QK_REP,  TT(_NUM), ALTERN_R3, SWE_OE,
-  KC_LALT, KC_LGUI, THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, RGUI_T(KC_PGDN), RALT_T(KC_PGUP)
+  OSM_SFT,        ALTERN_L3, QK_REP,  QK_AREP, ALTERN_R3, SWE_OE,
+  THUMB_ROW
  ),
  [_GAME] = LAYOUT_wrapper(
    KC_ESC,  KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_F9,
    KC_TAB,  KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SWE_AA,
   KC_LCTL, KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,                      KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT, SWE_AE,
-  KC_LSFT, KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V, QK_REP,  TT(_NUM),    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, SWE_OE,
-                             KC_LALT, KC_LGUI, THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, RGUI_T(KC_PGDN), RALT_T(KC_PGUP)
+  KC_LSFT, KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V, KC_G,  KC_T,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, SWE_OE,
+  THUMB_ROW
  ),
  [_NAV] = LAYOUT_wrapper(
   _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
