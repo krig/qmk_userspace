@@ -16,6 +16,7 @@
   */
 
 #include "krig.h"
+#include "features/swapper.h"
 #define LAYOUT_wrapper(...)             LAYOUT(__VA_ARGS__)
 
 #define THUMB_ROW KC_LEFT, KC_RGHT, THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, KC_DOWN, KC_UP
@@ -143,3 +144,7 @@ bool rgb_matrix_indicators_user() {
      return false;
 }
 
+bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {
+    process_record_swapper(keycode, record);
+    return true;
+}
