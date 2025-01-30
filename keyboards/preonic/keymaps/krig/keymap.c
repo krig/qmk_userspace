@@ -1,9 +1,6 @@
 /*
  * Kristoffer Gronlund, 2023
  * Preonic
- *
- * Apart from the alternate layout layer, this layout
- * is fairly stable and basically what I use for work.
  */
 
 #include "krig.h"
@@ -15,13 +12,6 @@
 #define OSM_SFR OSM(MOD_RSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_ALTERN] = LAYOUT_wrapper(
-       KC_GRV,     NUMROW_L,     NUMROW_R, TG(_MOUSE),
-       KC_TAB,    ALTERN_L1,    ALTERN_R1, KC_BSPC,
-      CTL_ESC,    ALTERN_L2,    ALTERN_R2, KC_QUOT,
-      KC_LSFT,    ALTERN_L3,    ALTERN_R3, OSM_SFR,
-      BOTTOM_ROW
-    ),
     [_QWERTY] = LAYOUT_wrapper(
        KC_GRV,     NUMROW_L,     NUMROW_R, TG(_MOUSE),
        KC_TAB,    QWERTY_L1,    QWERTY_R1, KC_BSPC,
@@ -66,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
     [_ADJUST] = LAYOUT_wrapper(
-      DF_QWER,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+      _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
       DF_GAME, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  KC_INS,
       RGB_TOG, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       RGB_MOD, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,

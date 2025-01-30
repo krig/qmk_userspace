@@ -29,13 +29,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   OSM_SFT,        QWERTY_L3, QK_REP,  QK_AREP, QWERTY_R3, SWE_OE,
   THUMB_ROW()
  ),
- [_ALTERN] = LAYOUT_wrapper(
-   KC_GRV,         NUMROW_L,                    NUMROW_R, GUI_SPC,
-   KC_TAB,        ALTERN_L1,                   ALTERN_R1, SWE_AA,
-  CTL_ESC,        ALTERN_L2,                   ALTERN_R2, SWE_AE,
-  OSM_SFT,        ALTERN_L3, QK_REP,  QK_AREP, ALTERN_R3, SWE_OE,
-  THUMB_ROW()
- ),
  [_GAME] = LAYOUT_wrapper(
    KC_ESC,  KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_F9,
    KC_TAB,  KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SWE_AA,
@@ -77,7 +70,6 @@ bool oled_task_user() {
      if (is_keyboard_master()) {
          const int dlayer = get_highest_layer(default_layer_state);
          switch (dlayer) {
-             case _ALTERN: oled_write_ln_P(PSTR("ALT!!!"), false); break;
              case _QWERTY: oled_write_ln_P(PSTR("QWERTY"), false); break;
              case _GAME: oled_write_ln_P(PSTR("*U H C*"), false); break;
          }
@@ -98,16 +90,7 @@ bool rgb_matrix_indicators_user() {
      // rows = 10
      const int dlayer = get_highest_layer(default_layer_state);
      const int layer = get_highest_layer(layer_state);
-     if (dlayer == _ALTERN) {
-         rgb_matrix_set_color(g_led_config.matrix_co[2][1], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][3], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[2][4], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[7][1], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[7][2], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[7][3], RGB_GOLD);
-         rgb_matrix_set_color(g_led_config.matrix_co[7][4], RGB_GOLD);
-     } if (dlayer == _GAME) {
+     if (dlayer == _GAME) {
          rgb_matrix_set_color_all(RGB_OFF);
          rgb_matrix_set_color(g_led_config.matrix_co[1][3], RGB_GOLD);
          rgb_matrix_set_color(g_led_config.matrix_co[2][2], RGB_GOLD);

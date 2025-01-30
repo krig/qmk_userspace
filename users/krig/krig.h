@@ -21,7 +21,6 @@ enum custom_keycodes {
 };
 
 enum custom_layers {
-    _ALTERN,
     _QWERTY,
     _GAME,
     _NAV,
@@ -96,8 +95,6 @@ enum custom_layers {
 #endif
 #define THUMB_R4 QK_AREP
 
-// toggles between qwerty and AKL
-#define DF_QWER  DF(_QWERTY)
 #define DF_GAME  DF(_GAME)
 
 bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record);
@@ -105,9 +102,7 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record);
 #define NUMROW_L KC_1,     KC_2,    KC_3,    KC_4,    KC_5
 #define NUMROW_R KC_6,     KC_7,    KC_8,    KC_9,    KC_0
 
-//#include "layout/qwerty.h"
 #include "layout/snthpig.h"
-#include "layout/snthpig-alt.h"
 #include "layout/nav.h"
 #include "layout/num.h"
 #include "layout/sym.h"

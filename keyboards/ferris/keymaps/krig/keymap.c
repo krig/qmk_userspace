@@ -16,12 +16,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QWERTY_L3, QWERTY_R3,
     THUMB_L2, THUMB_L1, THUMB_R1, THUMB_R2
   ),
-  [_ALTERN] = LAYOUT_wrapper(
-    ALTERN_L1, ALTERN_R1,
-    ALTERN_L2, ALTERN_R2,
-    ALTERN_L3, ALTERN_R3,
-    THUMB_L2, THUMB_L1, THUMB_R1, THUMB_R2
-  ),
   [_GAME] = LAYOUT(
      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,     KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT,

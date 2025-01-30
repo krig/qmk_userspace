@@ -25,12 +25,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       WS_PREV, OSM_SFT,    QWERTY_L3,    QWERTY_R3, KC_RSFT,
        QK_REP, KC_MEH, CTL_SFT, KC_LALT, KC_LGUI, MO(_NAV),  KC_SPC,          MO(_SYM), LT(_NUM, KC_LEFT), KC_DOWN,   KC_UP, KC_RGHT
     ),
-    [_ALTERN] = LAYOUT_wrapper(
-       WS_ALL,  KC_TAB,    ALTERN_L1,    ALTERN_R1, KC_BSPC,
-      WS_NEXT, CTL_ESC,    ALTERN_L2,    ALTERN_R2, CTL_ENT,
-      WS_PREV, OSM_SFT,    ALTERN_L3,    ALTERN_R3, KC_RSFT,
-       QK_REP, KC_MEH, CTL_SFT, KC_LALT, KC_LGUI, MO(_NAV),  KC_SPC,          MO(_SYM), LT(_NUM, KC_LEFT), KC_DOWN,   KC_UP, KC_RGHT
-    ),
     [_GAME] = LAYOUT(
        WS_ALL,  KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
       WS_NEXT, CTL_ESC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT, CTL_ENT,
@@ -56,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______
     ),
     [_ADJUST] = LAYOUT(
-      DF_QWER, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+      _______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
       DF_GAME, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_INS,
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
       _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, QK_BOOT

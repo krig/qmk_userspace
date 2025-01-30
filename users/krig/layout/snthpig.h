@@ -1,4 +1,5 @@
 #pragma once
+// my custom keyboard layout
 // q f h k v j y o u ö
 // r s n t p g c a e i
 // x m l d b z w . å ä

@@ -27,13 +27,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   OSM_SFT,    QWERTY_L3, KC_MUTE, KC_MPLY,    QWERTY_R3, KC_RSFT,
   KG_THUMBROW
 ),
-[_ALTERN] = LAYOUT_wrapper(
-       KC_GRV,     NUMROW_L,     NUMROW_R,  KC_RALT,
-   KC_TAB,    ALTERN_L1, /* ----- ----- */    ALTERN_R1, KC_BSPC,
-  CTL_ESC,    ALTERN_L2, /* ----- ----- */    ALTERN_R2, CTL_ENT,
-  OSM_SFT,    ALTERN_L3, KC_MUTE, KC_MPLY,    ALTERN_R3, KC_RSFT,
-  KG_THUMBROW
-),
 [_GAME] = LAYOUT_wrapper(
    KC_ESC,  KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4, /* ----- ----- */    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_RALT,
    KC_TAB,  KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R, /* ----- ----- */    KC_T,    KC_Y,    KC_I,    KC_O,    KC_P, KC_BSPC,
@@ -63,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      GUI__X,  GUI__C,  GUI__V, _______, _______, _______, _______, _______, _______, _______
 ),
 [_ADJUST] = LAYOUT(
-  DF_QWER,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+  _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
   DF_GAME, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______,  KC_INS,
   _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT,
@@ -98,9 +91,6 @@ static void print_status_narrow(void) {
          case _QWERTY:
              oled_write_P(PSTR("qwrty"), false);
              break;
-         case _ALTERN:
-             oled_write_P(PSTR("alter"), false);
-             break;
          case _GAME:
              oled_write_P(PSTR("uhc!!"), false);
              break;
@@ -115,7 +105,6 @@ static void print_status_narrow(void) {
      oled_set_cursor(0, 7);
      switch (get_highest_layer(layer_state)) {
          case _QWERTY:
-         case _ALTERN:
          case _GAME:
              oled_write_P(PSTR("....."), false);
              break;

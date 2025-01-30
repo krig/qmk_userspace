@@ -16,13 +16,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LSFT, QWERTY_L3,                        QWERTY_R3, SWE_OE,
     MOON_THUMBS
   ),
-  [_ALTERN] = LAYOUT_wrapper(
-     KC_GRV,  NUMROW_L,    KC_0,   KC_PGUP,     NUMROW_R, GUI_SPC,
-     KC_TAB, ALTERN_L1, KC_UNDS,   KC_PGDN,    ALTERN_R1, SWE_AA,
-    CTL_ESC, ALTERN_L2, KC_MINS,   KC_DQUO,    ALTERN_R2, SWE_AE,
-    KC_LSFT, ALTERN_L3,                        ALTERN_R3, SWE_OE,
-    MOON_THUMBS
-  ),
   [_GAME] = LAYOUT_wrapper(
      KC_ESC, KC_GRV,   KC_1,     KC_2,    KC_3,    KC_4,    KC_T,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_F9,
      KC_TAB, KC_TAB,   KC_Q,     KC_W,    KC_E,    KC_R,    KC_G, KC_PGUP,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SWE_AA,
@@ -63,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______
   ),
   [_ADJUST] = LAYOUT_moonlander(
-    DF_QWER,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, _______, _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+    _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, _______, _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     DF_GAME, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
@@ -88,8 +81,6 @@ layer_state_t default_layer_state_set_keymap(layer_state_t state) {
     bool led_3 = false;
     if (layer_state_cmp(state, _QWERTY)) {
             led_1 = true;
-    } else if (layer_state_cmp(state, _ALTERN)) {
-            led_2 = true;
     } else if (layer_state_cmp(state, _GAME)) {
             led_3 = true;
     }

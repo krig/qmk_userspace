@@ -28,12 +28,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QWERTY_L3, QWERTY_R3,
     THUMB_ROW
   ),
-  [_ALTERN] = LAYOUT_wrapper(
-    ALTERN_L1, ALTERN_R1,
-    ALTERN_L2, ALTERN_R2,
-    ALTERN_L3, ALTERN_R3,
-    THUMB_ROW
-  ),
   [_GAME] = LAYOUT_wrapper(
      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,     KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT,
@@ -67,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_ADJUST] = LAYOUT(
       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,
        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-    DF_QWER, DF_GAME, TG_MOUS, _______, _______, _______, _______, _______, _______, QK_BOOT,
+    _______, DF_GAME, TG_MOUS, _______, _______, _______, _______, _______, _______, QK_BOOT,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
@@ -113,8 +107,6 @@ bool oled_task_user(void) {
         // Host Keyboard Layer Status
         if (layer_state_cmp(default_layer_state, _QWERTY)) {
             oled_write_P(PSTR("qwerty\n"), false);
-        } else if (layer_state_cmp(default_layer_state, _ALTERN)) {
-            oled_write_P(PSTR("altern\n"), false);
         } else if (layer_state_cmp(default_layer_state, _GAME)) {
             oled_write_P(PSTR("uhc\n"), false);
         } else {
@@ -124,7 +116,6 @@ bool oled_task_user(void) {
 
         switch (get_highest_layer(layer_state)) {
             case _QWERTY:
-            case _ALTERN:
             case _GAME:
                 oled_write_P(PSTR("....\n\n"), false);
                 break;
