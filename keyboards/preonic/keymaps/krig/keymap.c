@@ -7,7 +7,6 @@
  */
 
 #include "krig.h"
-#include "features/layer_lock.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
 #define BOTTOM_ROW \

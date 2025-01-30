@@ -1,5 +1,4 @@
 #include "krig.h"
-#include "features/layer_lock.h"
 
 #define MOON_LED_LEVEL LED_LEVEL
 #define LAYOUT_wrapper(...)             LAYOUT_moonlander(__VA_ARGS__)

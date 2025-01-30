@@ -14,7 +14,6 @@ enum custom_keycodes {
     SQ_LTAR,              // <-
     SQ_PIPL,              // <|
     SQ_PIPR,              // |>
-    LLOCK,                // layer lock
     CMD_TAB,              // single-key cmd+tab (features/swapper)
     CMD_GRV,              // single-key cmd+` (features/swapper)
 
