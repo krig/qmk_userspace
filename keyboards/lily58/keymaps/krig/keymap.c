@@ -19,14 +19,19 @@
 #include "features/swapper.h"
 #define LAYOUT_wrapper(...)             LAYOUT(__VA_ARGS__)
 
-#define THUMB_ROW() ALT_T(KC_LEFT), GUI_T(KC_RGHT), THUMB_L2,  THUMB_L1, THUMB_R1, THUMB_R2, RGUI_T(KC_DOWN), ALGR_T(KC_UP)
+#define THUMB_ROW() \
+    THUMB_L4, THUMB_L3, THUMB_L2, THUMB_L1, \
+    THUMB_R1, THUMB_R2, THUMB_R3, THUMB_R4
+
+#define L_INNER LM(_NUM, MOD_LGUI)
+#define R_INNER G(KC_UP)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT_wrapper(
    KC_GRV,         NUMROW_L,                    NUMROW_R, GUI_SPC,
    KC_TAB,        QWERTY_L1,                   QWERTY_R1, SWE_AA,
   CTL_ESC,        QWERTY_L2,                   QWERTY_R2, SWE_AE,
-  OSM_SFT,        QWERTY_L3, QK_REP,  QK_AREP, QWERTY_R3, SWE_OE,
+  OSM_SFT,        QWERTY_L3, L_INNER, R_INNER, QWERTY_R3, SWE_OE,
   THUMB_ROW()
  ),
  [_GAME] = LAYOUT_wrapper(
