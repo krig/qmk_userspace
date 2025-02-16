@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KG_THUMBROW
 ),
 [_NAV] = LAYOUT_wrapper(
-  _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+  _______, L_NAV_L0,                   L_NAV_R0, _______,
   _______,   L_NAV_L1,                   L_NAV_R1, _______,
   _______,   L_NAV_L2,                   L_NAV_R2, _______,
   _______,   L_NAV_L3, _______, _______, L_NAV_R3, _______,
