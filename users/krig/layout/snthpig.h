@@ -19,6 +19,6 @@
 #else
 
 #define QWERTY_L3 KC_X, KC_F, KC_L, LT(_NUM, KC_D), KC_B
-#define QWERTY_R3 KC_Z, KC_W, KC_QUOT, KC_SLSH, KC_DOT
+#define QWERTY_R3 KC_Z, KC_W, KC_QUOT, KC_DQUO, KC_DOT
 
 #endif
