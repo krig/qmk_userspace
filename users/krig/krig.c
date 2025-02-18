@@ -238,7 +238,11 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
         case DF_GAME:
             if (record->event.pressed) {
-                default_layer_xor(1 << _GAME);
+                if (get_highest_layer(default_layer_state) == _GAME) {
+                    set_single_persistent_default_layer(_QWERTY);
+                } else {
+                    set_single_persistent_default_layer(_GAME);
+                }
             }
             return false;
     };
