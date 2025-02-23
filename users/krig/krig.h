@@ -80,6 +80,7 @@ enum custom_layers {
 // Convenience
 #define ZOOM_IN LGUI(KC_PLUS)
 #define ZOOM_UT LGUI(KC_MINS)
+#define DELWORD LGUI(KC_BSPC)
 
 #define THUMB_L1 KC_SPC
 #define THUMB_L2 LT(_NAV, KC_ESC)

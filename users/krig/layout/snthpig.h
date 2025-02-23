@@ -8,7 +8,7 @@
 
 #define QWERTY_L1 KC_Q, KC_M, KC_H, KC_K, KC_V
 #define QWERTY_L2 KC_R, KC_S, KC_N, KC_T, KC_P
-#define QWERTY_R1 KC_J, KC_Y, KC_O, KC_U, KC_SCLN
+#define QWERTY_R1 KC_J, KC_Y, KC_O, KC_U, DELWORD
 #define QWERTY_R2 KC_G, KC_C, KC_A, KC_E, KC_I
 
 #ifdef KRIG_HOMEROWMODS
