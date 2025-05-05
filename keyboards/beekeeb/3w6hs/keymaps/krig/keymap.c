@@ -6,7 +6,6 @@
 #include "krig.h"
 #include "features/swapper.h"
 
-#define TG_MOUS TG(_MOUSE)
 #define LAYOUT_wrapper(...)             LAYOUT_split_3x5_3(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -40,18 +39,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     L_SYM_L3, L_SYM_R3,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
-  [_MOUSE] = LAYOUT_wrapper(
-    L_MOUSE_L1, L_MOUSE_R1,
-    L_MOUSE_L2, L_MOUSE_R2,
-    L_MOUSE_L3, L_MOUSE_R3,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_TRNS, KC_TRNS
-  ),
   [_ADJUST] = LAYOUT_wrapper(
     L_ADJ34_L1, L_ADJ34_R1,
     L_ADJ34_L2, L_ADJ34_R2,
     L_ADJ34_L3, L_ADJ34_R3,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   )
+};
+
+const uint16_t PROGMEM combo_yo[] = {KC_Y, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_ca[] = {KC_C, KC_A, COMBO_END};
+const uint16_t PROGMEM combo_wq[] = {KC_W, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM combo_ou[] = {KC_O, KC_U, COMBO_END};
+const uint16_t PROGMEM combo_ae[] = {KC_A, KC_E, COMBO_END};
+const uint16_t PROGMEM combo_qd[] = {KC_QUOT, KC_DOT, COMBO_END};
+const uint16_t PROGMEM combo_ei[] = {KC_E, KC_I, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(combo_wq, KC_DQUO),
+    COMBO(combo_ei, SWE_AE),
+    COMBO(combo_ae, SWE_OE),
+    COMBO(combo_qd, SWE_AA)
 };
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {

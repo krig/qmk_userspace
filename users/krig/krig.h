@@ -92,7 +92,7 @@ enum custom_layers {
 #ifdef KRIG_MOUSE_LAYER
 #define THUMB_R3 LT(_MOUSE, KC_BSPC)
 #else
-#define THUMB_R3 KC_BSPC
+#define THUMB_R3 DELWORD
 #endif
 #define THUMB_R4 QK_AREP
 
