@@ -252,3 +252,14 @@ bool krig_process_default_layers(uint16_t keycode, keyrecord_t* record) {
     };
     return true;
 }
+
+uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    if ((mods & MOD_MASK_CTRL)) {
+        switch (keycode) {
+            // bash history search/inverse search
+            case KC_R: return C(KC_S);
+            case KC_S: return C(KC_R);
+        }
+    }
+    return KC_TRNS;
+}
