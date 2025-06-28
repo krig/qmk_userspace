@@ -4,6 +4,9 @@ action = compile
 
 all: ferris waterfowl lily58 preonic sofle moonlander m50 3w6
 
+compile_commands.json:
+	qmk compile -kb ferris/sweep -km krig --compiledb
+
 ferris:
 	qmk compile -kb ferris/sweep -km krig
 
