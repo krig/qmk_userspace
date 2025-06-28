@@ -8,6 +8,7 @@ REPEAT_KEY_ENABLE = yes
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 
+INTROSPECTION_KEYMAP_C = combos.c
 SRC += krig.c
 SRC += features/achordion.c
 SRC += features/flow.c

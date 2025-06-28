@@ -3,6 +3,7 @@ VIA_ENABLE = no
 BOOTLOADER = rp2040
 CONVERT_TO = promicro_rp2040
 CONSOLE_ENABLE = yes
+COMBO_ENABLE = yes
 
 SRC += features/custom_shift_keys.c
 SRC += features/krig_caps_word.c

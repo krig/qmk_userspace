@@ -47,20 +47,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-const uint16_t PROGMEM combo_yo[] = {KC_Y, KC_O, COMBO_END};
-const uint16_t PROGMEM combo_ca[] = {KC_C, KC_A, COMBO_END};
-const uint16_t PROGMEM combo_wq[] = {KC_W, KC_QUOT, COMBO_END};
-const uint16_t PROGMEM combo_ou[] = {KC_O, KC_U, COMBO_END};
-const uint16_t PROGMEM combo_ae[] = {KC_A, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_qd[] = {KC_QUOT, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combo_ei[] = {KC_E, KC_I, COMBO_END};
-combo_t key_combos[] = {
-    COMBO(combo_wq, KC_DQUO),
-    COMBO(combo_ei, SWE_AE),
-    COMBO(combo_ae, SWE_OE),
-    COMBO(combo_qd, SWE_AA)
-};
-
 bool process_record_keymap(uint16_t keycode, keyrecord_t* record) {
     process_record_swapper(keycode, record);
     return true;
