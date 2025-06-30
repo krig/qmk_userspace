@@ -12,9 +12,9 @@ const uint16_t PROGMEM combo_ei[] = {KC_E, KC_I, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_uslsh, DELWORD),
     COMBO(combo_wquo, KC_DQUO),
-    COMBO(combo_yo, KC_CIRC),
-    COMBO(combo_ou, SWE_OE),
-    COMBO(combo_ae, SWE_AE),
-    COMBO(combo_qdot, SWE_AA)
+    // COMBO(combo_yo, KC_CIRC),
+    // COMBO(combo_ou, SWE_OE),
+    // COMBO(combo_ae, SWE_AE),
+    // COMBO(combo_qdot, SWE_AA)
 };
 #endif
