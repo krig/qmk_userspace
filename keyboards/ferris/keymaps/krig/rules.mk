@@ -1,7 +1,7 @@
 LTO_ENABLE = no
 VIA_ENABLE = no
 BOOTLOADER = rp2040
-CONVERT_TO = promicro_rp2040
+CONVERT_TO = sparkfun_pm2040
 CONSOLE_ENABLE = yes
 COMBO_ENABLE = yes
 
